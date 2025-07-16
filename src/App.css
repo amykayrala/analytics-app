@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --green: #6d7d5d;
+  --brown: #5a483c;
+  --light: #9e6b38;
+  --blue: #1b393d;
+  --grey: #9d9ca1:
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body{
+  font-family: "Kantumruy Pro", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-pink{
+  background-color: var(--pink) !important;
+  padding: 10px 20px;
+  color: white !important;
+  border-radius: 5px; 
+  border: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button-pink:hover {
+  background-color: #e20599 !important;
+  color: white !important;
+}
+
+.NavBar {
+  background-color: var(--brown) !important;
+  position: sticky;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.NavBarBrand {
+  font-family: 'Poetsen One', 'Arial';
+  color: var(--light) !important;
+  font-weight: 500;
+}
+
+.NavBar .nav-link {
+  color: black !important;
+  font-weight: 500;
+}
+
+.NavBar .nav-link:hover {
+  color: var(--light) !important; 
+}
+
+.NavBar .nav-link.active {
+  color: var(--blue) !important; 
+}
+
+.home-page{
+  margin-top: 60px;
+
+}
+
+
+/* FOOTER STYLES */
+
+.footer {
+  background-color: var(--brown);
   color: white;
+  border-top: 4px solid var(--pink);
 }
 
-.App-link {
-  color: #61dafb;
+.footer h5 {
+  font-weight: 700;
+  color: var(--pink);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--light);
+  font-weight: 500;
+  text-decoration: none; 
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons a {
+  margin: 0 8px;
+  font-size: 1.3rem;
+  color: var(--pink);
+}
+
+.footer-icons a:hover {
+  color: #d457a5;
+}
+
+footer p {
+  margin: 0;
 }
