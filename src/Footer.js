@@ -1,6 +1,6 @@
 import './App.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { FaInstagram, FaFacebookF, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaEnvelope , FaArrowUp } from 'react-icons/fa';
 
 function Footer() {
     const handleScrollToTop = () => {
@@ -23,7 +23,7 @@ function Footer() {
           <Col md={4} className="mb-3 mb-md-0">
             <div className="footer-links">
             <Button onClick={handleScrollToTop}>
-                Scroll to Top
+                Scroll to Top <FaArrowUp />
             </Button>
             </div>
           </Col>
@@ -40,7 +40,7 @@ function Footer() {
         <Row>
           <Col className="text-center mt-3 small">
             <p>
-              Made with <FaHeart style={{ color: 'var(--pink)' }} /> by Amy· © {new Date().getFullYear()} Coffee Census
+                © {new Date().getFullYear()} Coffee Census
             </p>
             <br></br>
           </Col>

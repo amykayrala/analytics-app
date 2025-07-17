@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
   --green: #6d7d5d;
   --brown: #5a483c;
-  --light: #9e6b38;
-  --blue: #1b393d;
+  --light: #c28a52;
+  --blue: #345162;
   --grey: #9d9ca1:
 }
 
 .body{
   font-family: "Kantumruy Pro", sans-serif;
 }
+
 
 .button-pink{
   background-color: var(--pink) !important;
@@ -33,7 +33,7 @@
 }
 
 .NavBarBrand {
-  font-family: 'Poetsen One', 'Arial';
+  font-family: 'Funnel Sans', 'Arial';
   color: var(--light) !important;
   font-weight: 500;
 }
@@ -53,9 +53,39 @@
 
 .home-page{
   margin-top: 60px;
+  padding-top: 1rem;
+  background-color: #fff7f0;
+  color:#465964;
+}
+
+.home-banner{
+  text-align: center;
+  display: flex;
+  flex-direction: column;       
+  justify-content: center;     
+  align-items: center; 
+}
+
+.line-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;       
+  justify-content: center;     
+  align-items: center; 
 
 }
 
+.bar-section{
+  margin: 1rem 5%;
+}
+
+.home-page h2,
+.home-page h3,
+.home-page h4 {
+  font-family: "Funnel Sans", sans-serif;
+  color:#c28a52;
+  
+}
 
 /* FOOTER STYLES */
 
@@ -85,13 +115,74 @@
 .footer-icons a {
   margin: 0 8px;
   font-size: 1.3rem;
-  color: var(--pink);
+  color: var(--light);
 }
 
 .footer-icons a:hover {
-  color: #d457a5;
+  color: var(--blue);
 }
 
 footer p {
   margin: 0;
+}
+
+.chart-container1{
+  width : 100%;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 25px;
+}
+
+.chart-container2{
+  width: 75%;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 25px;
+
+}
+
+.banner{
+  background-image: url('./media/banner.jpeg');
+  background-size: cover;
+  height: 50vh;
+  width: 90%;
+  color: white;
+  font-family: "Funnel Sans", sans-serif;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;   
+  align-items: flex-start; 
+  justify-content: center; 
+  padding-left: 3rem;         
+  text-align: left;
+  margin: 1rem;
+  border-radius: 25px;
+}
+
+.facts{
+  text-align: center;
+  display: flex;
+  flex-direction: column;       
+  justify-content: center;     
+  align-items: center;  
+}
+
+.facts-div{
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 25px;
+}
+
+.facts-img{
+  width: 300px;
+  border-radius: 25px;
+  margin: 1rem;
+}
+
+.barchart{
+  display: flex;
+  align-items: center;
+
 }
