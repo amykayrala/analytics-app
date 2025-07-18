@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import Home from './Home';
+import "./i18n";
 
 
 function App() {

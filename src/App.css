@@ -53,7 +53,7 @@
 
 .home-page{
   margin-top: 60px;
-  padding-top: 1rem;
+  padding: 1.5rem 0 3rem;
   background-color: #fff7f0;
   color:#465964;
 }
@@ -64,6 +64,15 @@
   flex-direction: column;       
   justify-content: center;     
   align-items: center; 
+}
+
+.middle {
+  text-align: center;
+  display: flex;
+  flex-direction: column;       
+  justify-content: center;     
+  align-items: center; 
+
 }
 
 .line-section {
@@ -81,7 +90,8 @@
 
 .home-page h2,
 .home-page h3,
-.home-page h4 {
+.home-page h4,
+.home-page h5 {
   font-family: "Funnel Sans", sans-serif;
   color:#c28a52;
   
@@ -91,7 +101,7 @@
 
 .footer {
   background-color: var(--brown);
-  color: white;
+  color: var(--light);
   border-top: 4px solid var(--pink);
 }
 
@@ -131,6 +141,7 @@ footer p {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .chart-container2{
@@ -138,6 +149,7 @@ footer p {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 
 }
 
@@ -157,8 +169,30 @@ footer p {
   text-align: left;
   margin: 1rem;
   border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
+.mid-section{
+  background-color: var(--brown);
+  background-size: cover;
+  height: 50vh;
+  width: 90%;
+  height: auto;
+  color: white;
+  font-family: "Funnel Sans", sans-serif;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;   
+  align-items: center; 
+  justify-content: center; 
+  padding-left: 3rem;         
+  text-align: left;
+  margin: 1rem 0 3rem 0;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+}
 .facts{
   text-align: center;
   display: flex;
@@ -173,6 +207,7 @@ footer p {
   padding: 1rem;
   margin: 1rem;
   border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08)
 }
 
 .facts-img{
@@ -184,5 +219,42 @@ footer p {
 .barchart{
   display: flex;
   align-items: center;
+
+}
+
+.scrollButton{
+  background-color: var(--light) !important;
+  padding: 10px 20px;
+  color: white !important;
+  border-radius: 5px; 
+  border: none !important;
+}
+
+.scrollButton:hover {
+  background-color: var(--blue) !important;
+  color: white !important;
+}
+
+.coffeepics{
+  width: 150px;
+  border-radius: 25px;
+  margin: autp;
+}
+
+.facts-row{
+  text-align: left;
+  display: flex;      
+  justify-content: center;     
+  align-items: center; 
+  padding-top: 2rem;
+}
+
+.clickDiv{
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 75%;
 
 }
