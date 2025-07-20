@@ -60,11 +60,8 @@ function LineChart() {
             beginAtZero: false,
           },
           x: {
-              ticks: {
-                  callback: function(value, index) {
-                    // Show label only if index is even (every 2nd label)
-                    return index % 2 === 0 ? this.getLabelForValue(value) : '';
-                  }
+              grid: {
+                display: false, 
               },
           }
         },
