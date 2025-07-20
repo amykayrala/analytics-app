@@ -8,6 +8,13 @@ ChartJS.register(...registerables);
 
 function LineChart() {
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const locale = i18n.language || 'en-US';
+
+  const numberFormatter = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 
   const lineData = {
       labels: [ '2014/15', '2015/16', '2016/17', '2017/18', '2018/19', '2019/20', '2020/21', '2021/22','2022/23', '2023/24'],
@@ -31,15 +38,22 @@ function LineChart() {
           datalabels: {
               display: function(context) {
                   const index = context.dataIndex;
-                  // For example, show label only on points at index 0 and 5
                   return index === 0 || index === 4 || index === 9;
                 },
               anchor: 'end',
               align: 'bottom',
+              formatter: (value) => numberFormatter.format(value),
             },
           tooltip: {
             enabled: true,
             backgroundColor: '#345162',
+            callbacks: {
+              label: function (context) {
+                const label = context.dataset.label || '';
+                const value = context.raw;
+                return `${label}: ${numberFormatter.format(value)}`; 
+              },
+            },
           },
           legend: {
               display: true,
@@ -58,6 +72,11 @@ function LineChart() {
               text: t('million'),
             },
             beginAtZero: false,
+            ticks: {
+              callback: function (value) {
+                return numberFormatter.format(value); 
+              },
+            },
           },
           x: {
               grid: {

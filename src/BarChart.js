@@ -8,44 +8,48 @@ const barColors = ['', '', '', '', '#345162'];
 
 function BarChart() {
     const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const locale = i18n.language || 'en-US';
+
+    const numberFormatter = new Intl.NumberFormat(locale, {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    });
 
     const [activeBars, setActiveBars] = useState(
         barLabels.reduce((acc, _, i) => {
-          acc[i] = true; // all bars active initially
+          acc[i] = true; 
           return acc;
         }, {})
-      );
+    );
     
-      // Toggle a single bar on/off by index
-      const toggleBar = (index) => {
-        setActiveBars((prev) => ({
-          ...prev,
-          [index]: !prev[index],
-        }));
-      };
-    
-      // Get active bars data filtered by activeBars state
-      const visibleData = barLabels
-        .map((label, i) => ({
-          label,
-          value: barData[i],
-          index: i,
-          active: activeBars[i],
-        }))
-        .filter((point) => point.active);
-    
-      const chartData = {
-        labels: visibleData.map((point) => point.label),
-        datasets: [
-          {
-            label: t('percentage'),
-            data: visibleData.map((point) => point.value),
-            backgroundColor: visibleData.map((point) => barColors[point.index]),
-            borderWidth: 2,
-          },
-        ],
-      };
-
+    const toggleBar = (index) => {
+      setActiveBars((prev) => ({
+        ...prev,
+        [index]: !prev[index],
+      }));
+    };
+  
+    const visibleData = barLabels
+      .map((label, i) => ({
+        label,
+        value: barData[i],
+        index: i,
+        active: activeBars[i],
+      }))
+      .filter((point) => point.active);
+  
+    const chartData = {
+      labels: visibleData.map((point) => point.label),
+      datasets: [
+        {
+          label: t('percentage'),
+          data: visibleData.map((point) => point.value),
+          backgroundColor: visibleData.map((point) => barColors[point.index]),
+          borderWidth: 2,
+        },
+      ],
+    };
 
     return (
 
@@ -82,12 +86,19 @@ function BarChart() {
                   grid: {
                     display: false, 
                   },
+                  ticks: {
+                    callback: (value) => numberFormatter.format(value) + '%', 
+                  },
                 },
               },
             plugins: {
                 tooltip: {
                     enabled: true,
                     backgroundColor: '#6d7d5d',
+                    callbacks: {
+                      label: (context) =>
+                        `${context.dataset.label}: ${numberFormatter.format(context.raw)}%`, 
+                    },
                 },
                 title: {
                     display: true,
@@ -102,7 +113,7 @@ function BarChart() {
                 datalabels: {
                     anchor: 'end',
                     align: 'top',
-                    formatter: (value) => `${value}%`,
+                    formatter: (value) => `${numberFormatter.format(value)}%`,
                   },
             }
         }}
